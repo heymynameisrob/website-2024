@@ -1,0 +1,1 @@
+export const POST_DIRECTORY = 'src/app/posts'
