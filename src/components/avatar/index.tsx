@@ -26,7 +26,7 @@ function AvatarElement({isPlaying}: {isPlaying: boolean}) {
 
 function NowPlayingContent({ track }: {track: TrackProps  }) {
 
-  const { artist, isPlaying, songUrl, title } = track
+  const { artist, songUrl, title } = track
 
   return(
     <div className="space-y-2">
@@ -37,7 +37,7 @@ function NowPlayingContent({ track }: {track: TrackProps  }) {
           <span className="w-[4px] h-full bg-[#1db954] animate-[nowPlayingAnimation_2.2s_ease_infinite_-3.7s_alternate] origin-bottom"></span>
         </span>
       </div>
-      <p className="text-xs text-slate-900 dark:text-white dark:text-opacity-75">{title} – {artist}</p>
+      <a href={songUrl} className="text-xs text-slate-900 dark:text-white dark:text-opacity-75">{title} – {artist}</a>
     </div>    
   )
 }
