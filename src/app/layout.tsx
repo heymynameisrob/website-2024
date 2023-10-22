@@ -34,8 +34,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(inter.variable, syne.variable, work.variable, "font-sans font-normal tracking-tight antialiased scroll-smooth bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-white")}>        
-        <div className="hidden absolute top-0 left-0 w-full h-[50vh] overflow-hidden z-[-1] pointer-events-none bg-gradient-to-t to-white from-transparent linear-mask opacity-5 dark:block"></div>
+      <body className={cn(inter.variable, syne.variable, work.variable, "font-sans font-normal tracking-tight antialiased scroll-smooth text-slate-900 dark:text-white tv-lines--light dark:tv-lines--dark")}>        
+        {/* <div className="hidden absolute top-0 left-0 w-full h-[50vh] overflow-hidden z-[-1] pointer-events-none bg-gradient-to-t to-white from-transparent linear-mask opacity-5 dark:block"></div> */}
         {children}
       </body>
     </html>
