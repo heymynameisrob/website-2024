@@ -1,8 +1,26 @@
+import { cn } from '@/lib/utils'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Syne, Space_Grotesk } from 'next/font/google'
+import { Navbar } from '@/components/nav'
+import { BlurBG } from '@/components/blur'
 
-const inter = Inter({ subsets: ['latin'] })
+export const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter', 
+})
+
+export const work = Space_Grotesk({ 
+  subsets: ['latin'],
+  variable: '--font-work', 
+})
+
+export const syne = Syne({ 
+  subsets: ['latin'],
+  weight:['400', '700', '800'] ,
+  display: 'swap',
+  variable: '--font-syne', 
+})
 
 export const metadata: Metadata = {
   title: 'Hey my name is Rob',
@@ -16,7 +34,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={cn(inter.variable, syne.variable, work.variable, "font-sans font-normal tracking-tight antialiased scroll-smooth bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-white")}>        
+        <div className="hidden absolute top-0 left-0 w-full h-[50vh] overflow-hidden z-[-1] pointer-events-none bg-gradient-to-t to-white from-transparent linear-mask opacity-5 dark:block"></div>
+        {children}
+      </body>
     </html>
   )
 }
